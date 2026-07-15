@@ -1,0 +1,19 @@
+<template>
+    <!--
+        sfConsoleTabBridge — Utility bar component
+        No visible UI needed. The component is invisible when the utility bar
+        item is collapsed. It only serves as a message bridge between the
+        Chrome extension content script and the Salesforce Workspace API.
+    -->
+    <template if:true={isActive}>
+        <div class="slds-utility-bar__action-text">
+            <lightning-icon icon-name="utility:routing_offline" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+            Console Tab Router active
+        </div>
+    </template>
+    <template if:false={isActive}>
+        <div class="slds-utility-bar__action-text slds-text-color_weak">
+            Console Tab Router — not a console app
+        </div>
+    </template>
+</template>
